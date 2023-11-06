@@ -1,10 +1,11 @@
 import { NavLink } from "react-router-dom"
 
 const Navbar = () => {
+    const activeStyle = 'underline underline-offset-4'
     return (
-        <nav>
-            <ul>
-                <li>
+        <nav className="flex justify-between items-center fixed z-10 w-full py-5 px-8 text-sm font-light">
+            <ul className="flex items-center gap-3">
+                <li className="font-semibold text-lg">
                     <NavLink
                         to='/'
                     >
@@ -14,6 +15,7 @@ const Navbar = () => {
                 <li>
                     <NavLink
                         to='/'
+                        className={({ isActive }) => isActive ? activeStyle : undefined}
                     >
                         All
                     </NavLink>
@@ -21,6 +23,7 @@ const Navbar = () => {
                 <li>
                     <NavLink
                         to='/clothes'
+                        className={({ isActive }) => isActive ? activeStyle : undefined}
                     >
                         Clothes
                     </NavLink>
@@ -28,6 +31,7 @@ const Navbar = () => {
                 <li>
                     <NavLink
                         to='/electronics'
+                        className={({ isActive }) => isActive ? activeStyle : undefined}
                     >
                         Electronics
                     </NavLink>
@@ -35,6 +39,7 @@ const Navbar = () => {
                 <li>
                     <NavLink
                         to='/furnitures'
+                        className={({ isActive }) => isActive ? activeStyle : undefined}
                     >
                         Furnitures
                     </NavLink>
@@ -42,6 +47,7 @@ const Navbar = () => {
                 <li>
                     <NavLink
                         to='/toys'
+                        className={({ isActive }) => isActive ? activeStyle : undefined}
                     >
                         Toys
                     </NavLink>
@@ -49,18 +55,20 @@ const Navbar = () => {
                 <li>
                     <NavLink
                         to='/others'
+                        className={({ isActive }) => isActive ? activeStyle : undefined}
                     >
                         Others
                     </NavLink>
                 </li>
             </ul>
-            <ul>
-                <li>
+            <ul className="flex items-center gap-3">
+                <li className="text-black/60">
                     axel@gmail.com
                 </li>
                 <li>
                     <NavLink
                         to='/my-orders'
+                        className={({ isActive }) => isActive ? activeStyle : undefined}
                     >
                         My Orders
                     </NavLink>
@@ -68,8 +76,18 @@ const Navbar = () => {
                 <li>
                     <NavLink
                         to='/my-account'
+                        className={({ isActive }) => isActive ? activeStyle : undefined}
                     >
                         My Account
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink
+                        to='/sing-in'
+                        className={({ isActive }) =>
+                            isActive ? activeStyle : undefined
+                        }>
+                        Sign In
                     </NavLink>
                 </li>
                 <li>
@@ -79,3 +97,5 @@ const Navbar = () => {
         </nav>
     )
 }
+
+export { Navbar };
