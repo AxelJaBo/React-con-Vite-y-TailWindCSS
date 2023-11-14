@@ -27,8 +27,6 @@ const ShoppingCartProvider = ({ children }) => {
 
     // Get products
     const [items, setItems] = useState(null)
-
-    // Get products
     const [filteredItems, setFilteredItems] = useState(null)
 
     // Get products by Title
